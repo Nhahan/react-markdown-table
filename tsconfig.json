@@ -10,8 +10,11 @@
     "moduleResolution": "node",
     "baseUrl": "./src",
     "paths": {
-      "*": ["types/*"]
-    }
+      "*": ["types/*"],
+    },
+    "declaration": true,
+    "declarationDir": "./dist",
+    "outDir": "./dist"
   },
   "include": ["src"]
 }

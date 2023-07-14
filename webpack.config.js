@@ -4,10 +4,12 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'index.js',
   },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+  devServer: {
+    static: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    port: 3000,
   },
   module: {
     rules: [
@@ -18,9 +20,7 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
-    port: 3000,
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
 };
