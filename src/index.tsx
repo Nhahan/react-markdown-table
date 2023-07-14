@@ -1,6 +1,6 @@
 import React from 'react';
 import copyIcon from './CopyIcon.svg';
-import './MarkdownTable.css';
+import './index.css';
 
 type TableCell = string | number;
 
@@ -34,31 +34,36 @@ const MarkdownTable: React.FC<Props> = ({ data, view = true }) => {
   };
 
   return (
-    <div className={view ? 'markdown-table-container' : undefined}>
-      {!view && (
-        <button id="copy-button" className={view ? 'copy-button-view' : 'copy-button'} onClick={copyToClipboard}>
-          <img className="copy-icon" src={copyIcon} alt="Copy" />
-        </button>
-      )}
+    <div>
       {view && (
-        <table className="markdown-table">
-          <thead>
-          <tr>
-            {data[0].map((header, index) => (
-              <th key={index}>{header}</th>
-            ))}
-          </tr>
-          </thead>
-          <tbody>
-          {data.slice(1).map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {row.map((cell, cellIndex) => (
-                <td key={cellIndex}>{cell}</td>
+        <div className="markdown-table-container">
+          <button id="copy-button" className="copy-button-view" onClick={copyToClipboard}>
+            <img className="copy-icon" src={copyIcon} alt="Copy" />
+          </button>
+          <table className="markdown-table">
+            <thead>
+            <tr>
+              {data[0].map((header, index) => (
+                <th key={index}>{header}</th>
               ))}
             </tr>
-          ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+            {data.slice(1).map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {row.map((cell, cellIndex) => (
+                  <td key={cellIndex}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {!view && (
+        <button id="copy-button" className="copy-button" onClick={copyToClipboard}>
+          <img className="copy-icon" src={copyIcon} alt="Copy" />
+        </button>
       )}
     </div>
   );
