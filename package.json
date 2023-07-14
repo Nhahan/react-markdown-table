@@ -1,12 +1,11 @@
 {
   "name": "react-markdown-table",
-  "version": "0.0.1-pre",
+  "version": "1.0.0",
   "description": "React component library for generating and previewing markdown-style tables in React applications",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "prepack": "npm run build",
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production && rm -rf ./dist/index.js.LICENSE.txt"
+    "build": "rm -rf dist && mkdir dist && tsc && cp ./src/index.css ./dist && cp ./src/CopyIcon.svg ./dist"
   },
   "keywords": [
     "markdown table",
@@ -15,7 +14,8 @@
     "copy",
     "table generator",
     "react component",
-    "copy button"
+    "copy button",
+    "simple"
   ],
   "author": "Nhahan",
   "license": "ISC",
@@ -26,13 +26,19 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "css-loader": "^6.8.1",
-    "file-loader": "^6.2.0",
-    "style-loader": "^3.3.3",
-    "ts-loader": "^9.4.4",
-    "typescript": "^5.1.6",
-    "webpack": "^5.88.1",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "typescript": "^5.1.6"
+  },
+  "browser": "./browser/specific/main.js",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
