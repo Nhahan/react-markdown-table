@@ -1,6 +1,6 @@
-# MarkdownTable
+# React Markdown Table
 
-MarkdownTable is a React component library for generating and previewing markdown-style tables in React applications.
+react-markdown-table is a React component library for generating and previewing markdown tables.
 
 ## Installation
 
