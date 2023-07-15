@@ -24,7 +24,7 @@ const data = [
 const App = () => {
   return (
     <div>
-      <MarkdownTable data={data} />
+      <MarkdownTable data={data} /> {/* <MarkdownTable data={data} view={false} /> */}
     </div>
   );
 };
