@@ -1,7 +1,7 @@
 {
   "name": "react-markdown-table",
-  "version": "1.0.0",
-  "description": "React component library for generating and previewing markdown-style tables in React applications",
+  "version": "0.0.1",
+  "description": "React component library for generating and previewing markdown tables",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
